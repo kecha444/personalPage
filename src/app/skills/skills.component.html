@@ -1,0 +1,11 @@
+<div class="row mt-4">
+	<div class="col-12 pb-3">
+		<h3 class="mb-3">{{ skillsTitle }}</h3>
+		<div class="items">
+			<span *ngFor="let oneSkill of skills" class="badge badge-primary mr-2 px-3 py-2">
+				{{ oneSkill }}
+			</span>
+		</div>
+	</div>
+</div>
+<!-- *ngFor="let oneSkill of skills" с помощью этого мы проходимся циклом по каждому элементу массива skills и присваиваем ему этот спан персонально (это как цикл for of в js)-->

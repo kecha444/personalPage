@@ -1,0 +1,32 @@
+<div class="row mt-4">
+	<div class="col-4">
+		<img class="img-fluid rounded" src="{{ myInfo.photoSrc }}">
+	</div>
+	<div class="col-8">
+		<h2 class="fsName">{{ myInfo.firstName }} {{ myInfo.secondName }}</h2>
+		<p class="myCredo">{{ myInfo.aboutInfo }}</p>
+		<div class="mt-3 mb-3">
+			<div class="mt-3 mb-2"><strong>Основная информация</strong></div>
+			<div>Дата рождения: {{ myInfo.birthday | date:'dd.MM.yyyy' }}</div>
+			<div>Семейное положение:
+            <span [ngSwitch]="myInfo.family">
+            	<span *ngSwitchCase="0">Холост</span>
+            	<span *ngSwitchCase="1">Не замужем</span>
+            	<span *ngSwitchCase="2">Женат</span>
+            	<span *ngSwitchCase="3">Замужем</span>
+            </span>
+
+			</div>
+			
+			<div>
+			Дети: 
+			<span *ngIf="myInfo.kids;else nokids">Есть</span>
+			<ng-template #nokids>
+				<span> Нет</span>
+			 </ng-template>
+			</div> 
+		</div>
+	</div>
+</div>
+
+<app-contact-info></app-contact-info>

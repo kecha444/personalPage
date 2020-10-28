@@ -1,0 +1,35 @@
+<div class="row mt-4 mb-4">
+	<div class="col-12">
+		<h3 class="mb-3">Опыт работы</h3>
+	</div>
+	<div class="col-12 pb-3 d-flex">
+		<div class="col-6 pl-0">
+			<div *ngFor="let oneExp of expList" class="card mt-2" (click)="onSelect(oneExp)">
+				<div class="card-body workCard">
+					<h4 class="workTitle">{{ oneExp.id + 1 }}. {{ oneExp.organization }}</h4>
+					<p class="workDates mb-0">{{ oneExp.startData }} - {{ oneExp.endData }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-6 pr-0 w-100 mt-2">
+			<div *ngIf="selectedItem">
+				<div class="card px-3 py-4">
+					<h4 class="workTitle">{{ selectedItem.organization }}</h4>
+					<p class="workDates mb-0">{{ selectedItem.startData }}</p>
+					<p class="mt-4">{{ selectedItem.description }}</p>
+					<p class="mt-1">
+						<span class="workDates">Сайт:</span>
+						<a [href]="selectedItem.siteLink" target="_blank">
+						{{ selectedItem.siteLink }}
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- oneExp.id + 1 чтобы номера отображались с 1, а не с нуля
+(click)="onSelect(oneExp)" оеСелект функцию мы прописываем в компоненте, (ванЭксп) это мы берем определенный объект каждый персонально из компонента EXP 
+
+Мы прописали функцию onSelect что при клике мышкой this.selectedItem = item; выбранный элемент становится item и дальше мы пишем <div *ngIf="selectedItem"> что в переводе - "если есть выбранный элемекент, то есть пользователь кликнул на какой либо объект", то мы выводим доп инфу из карточки компонента 
+-->

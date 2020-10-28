@@ -1,0 +1,3 @@
+.workCard:hover {cursor: pointer; background: #fafafa;}
+.workTitle { color: #454545; font-size: 20px; }
+.workDates { font-style: italic; color: #656565; }

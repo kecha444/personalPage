@@ -1,0 +1,11 @@
+li {
+	list-style-type: none;
+	font-size: 1.2rem;
+}
+
+li:before{
+	content: "\2731";
+	margin-right: 10px;
+	font-size: 1.1rem;
+	color: #005b8f;
+}
